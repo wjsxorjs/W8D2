@@ -1,5 +1,6 @@
 "use client"
 
+import ItemsList from "@/component/ItemsList";
 import { Grid } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
@@ -28,14 +29,7 @@ export default function Home() {
 
   return (
     <main style={{padding: '20px', width: '80%', margin: 'auto'}}>
-      <Grid container>
-        {list.map((item)=>(
-          <Grid item key={item.id} xs={3}>
-            <img src={item.image_link} alt={item.name} title={item.name}/>
-            <div>{item.name}</div>
-          </Grid>
-        ))}
-      </Grid>
+      <ItemsList itemList={list}/>
     </main>
   );
 }
